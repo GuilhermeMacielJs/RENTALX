@@ -48,7 +48,7 @@
                 "tags":["Category"],
                 "summary": "List all categories",
                 "description": "List all categories",
-                "response":{
+                "responses":{
                     "200":{
                         "description":"Success",
                         "content":{
@@ -72,6 +72,69 @@
                     }
                 }
 
+            }
+        },
+        "/categories/import":{
+            "post":{
+                "tags": ["Category"],
+                "summary": "Upload new category",
+                "description":"Upload new category",
+                "requestBody":{
+                    "content":{
+                        "multipart/form-data":{
+                            "schema":{
+                                "properties":{
+                                    "file":{
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201":{
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/specifications":{
+            "post":{
+                "tags": ["Specifications"],
+                "summary": "Create a specification",
+                "description": "Create a new specification",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref": "#/definitions/Specification"
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201": {
+                        "description":"Created"
+                    },
+                    "500":{
+                        "description":"Specification already exists!"
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "Specification":{
+            "type":"object",
+            "properties":{
+                "name":{
+                    "type":"string"
+                },
+                "description":{
+                    "type": "string"
+                }
             }
         }
     }
