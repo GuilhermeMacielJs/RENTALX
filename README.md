@@ -1,2 +1,2 @@
-# RENTALX
+# RENTAX
 Botcamp Ignite (nodejs) - Rocketseat
