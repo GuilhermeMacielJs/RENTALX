@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 
-import { ListCategoriesUseCase } from "./listCategoriesUseCase";
+import { ListCategoriesUseCase } from "@modules/cars/useCases/listCategories/listCategoriesUseCase";
 
 class ListCategoriesController {
     async handle(request: Request, response: Response) {
