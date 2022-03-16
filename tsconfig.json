@@ -13,11 +13,12 @@
         "@routes/*": ["routes/*"],
         "@middlewares/*": ["middlewares/*"]
     },
-    "esModuleInterop": true,
+     "esModuleInterop": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
+
   }
 }
